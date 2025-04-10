@@ -13,4 +13,22 @@ jobs:
 
         steps:
             - name: Checkout repo
-              uses: actions/checkout@v3
+              uses: actions/checkout@v4
+
+            - name: Set up jdk
+              uses: actions/setup-java@v4
+              with:
+                java-version: '22'
+                distribution: 'temurin'
+
+            - name: build docker image
+              run: docker build -t helloDocker .
+
+
+
+# docker login         - användarnamn och lösenord till dockerhub -> secret till github Action
+
+# docker build -t ....
+
+
+# docker push
