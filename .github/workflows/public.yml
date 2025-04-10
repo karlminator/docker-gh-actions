@@ -24,7 +24,8 @@ jobs:
             - name: build docker image
               run: docker build -t helloDocker .
 
-
+            - name: Login to Dockerhub
+              run: echo "running"
 
 # docker login         - användarnamn och lösenord till dockerhub -> secret till github Action
 
