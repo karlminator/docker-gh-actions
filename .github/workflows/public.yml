@@ -15,12 +15,6 @@ jobs:
             - name: Checkout repo
               uses: actions/checkout@v4
 
-            - name: Set up jdk
-              uses: actions/setup-java@v4
-              with:
-                java-version: '22'
-                distribution: 'temurin'
-
             - name: build docker image
               run: docker build -t ${{ secrets.DH_UN }}/hello-docker .
 
@@ -31,4 +25,4 @@ jobs:
                 password: ${{ secrets.DH_PW }}
 
             - name: push docker image
-              run: push ${{ secrets.DH_UN }}/hello-docker
+              run: docker push ${{ secrets.DH_UN }}/hello-docker
