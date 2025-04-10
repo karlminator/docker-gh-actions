@@ -22,7 +22,7 @@ jobs:
                 distribution: 'temurin'
 
             - name: build docker image
-              run: docker build -t helloDocker .
+              run: docker build -t hello-docker .
 
             - name: Login to Dockerhub
               run: echo "running"
