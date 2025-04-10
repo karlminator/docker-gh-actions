@@ -30,7 +30,5 @@ jobs:
                 username: ${{ secrets.DH_UN }}
                 password: ${{ secrets.DH_PW }}
 
-# docker build -t ....
-
-
-# docker push
+            - name: push docker image
+              run: push hello-docker .
