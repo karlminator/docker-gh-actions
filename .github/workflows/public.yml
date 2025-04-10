@@ -31,4 +31,4 @@ jobs:
                 password: ${{ secrets.DH_PW }}
 
             - name: push docker image
-              run: push hello-docker .
+              run: push hello-docker
