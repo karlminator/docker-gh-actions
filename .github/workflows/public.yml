@@ -22,7 +22,7 @@ jobs:
                 distribution: 'temurin'
 
             - name: build docker image
-              run: docker build -t hello-docker .
+              run: docker build -t ${{ secrets.DH_UN }}/hello-docker .
 
             - name: Login to Dockerhub
               uses: docker/login-action@v3
@@ -31,4 +31,4 @@ jobs:
                 password: ${{ secrets.DH_PW }}
 
             - name: push docker image
-              run: push hello-docker
+              run: push ${{ secrets.DH_UN }}/hello-docker
